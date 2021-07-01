@@ -12,7 +12,7 @@ fi
 printf "Task started.\n"
 
 read -p "Enter file extension with dot (Eg. .mp4): " fileextension
-if [ -z "$filecount" ]; then echo "Set to default extension .mp4" && fileextension=".mp4"; fi
+if [ -z "$fileextension" ]; then echo "Set to default extension .mp4" && fileextension=".mp4"; fi
 
 read -p "Enter filecount: " filecount
 if [ -z "$filecount" ]; then echo "Input cannot be empty. Program will now exit." & exit; fi

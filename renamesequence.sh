@@ -10,6 +10,10 @@ if [ "$userinput" = "A" ]; then
 fi
 
 printf "Task started."
+
+read -p "Enter file extension with dot (Eg. .mp4): " fileextension
+if [ -z "$fileextension" ]; then echo "Set to default extension .mp4" && fileextension=".mp4"; fi
+
 a=1
 for i in *; do 
 	if [ -f "$i" ]; then
@@ -19,7 +23,7 @@ for i in *; do
 		# printf `pwd`
 		# printf '\n'
 		echo "$i"
-		mv -i -- "`pwd`/$i" "`pwd`/$new"
+		mv -i -- "`pwd`/$i" "`pwd`/$new$fileextension"
 		a=`expr $a + 1`
 	fi
 done

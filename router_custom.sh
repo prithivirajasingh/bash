@@ -1,6 +1,7 @@
 #!/bin/sh
-#hosts to block in dnsmasq (Services\Additional Dnsmasq Options\addn-hosts=/jffs/badhosts)
-#https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=315773)
+# location: /jffs/custom.sh
+# hosts to block in dnsmasq (Services\Additional Dnsmasq Options\addn-hosts=/jffs/badhosts)
+# https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=315773)
 if mkdir /tmp/customlock 2> /dev/null
 then
 cd /jffs/

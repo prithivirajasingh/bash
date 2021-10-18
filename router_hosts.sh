@@ -5,7 +5,7 @@ if mkdir /tmp/customlock 2> /dev/null
 then
 cd /jffs/
 pwd
-sleep 0
+sleep 30
 echo "Sleep completed"
 curl -s https://winhelp2002.mvps.org/hosts.txt > temphosts.txt  2> badhosts.log
 echo "Curl1 completed"

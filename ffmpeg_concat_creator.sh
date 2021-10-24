@@ -1,4 +1,7 @@
 #!/bin/bash
+# example # ffmpeg -ss 10 -t 50 -i input.MP4 -vcodec h264_nvenc -an output.mp4
+# example # ffmpeg -ss 6 -i input.mp3 -c copy output.mp3
+
 # read -p "Enter any key to continue, "a" to abort: " userinput
 if [ "$userinput" = "a" ]; then
 	printf "Program terminated by user."

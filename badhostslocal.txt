@@ -1,0 +1,12 @@
+# Local badhosts file.
+# This file can be downloaded and used to append with hosts file
+
+0.0.0.0 tamilmother.com
+0.0.0.0 www.tamilmother.com
+0.0.0.0 vaalu.net
+0.0.0.0 tii.ai
+0.0.0.0 ads.com
+0.0.0.0 www.ads.com
+0.0.0.0 www.hue-expert.com
+0.0.0.0 waisheph.com
+0.0.0.0 cernrefraidinterva.xyz

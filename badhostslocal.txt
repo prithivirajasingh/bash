@@ -1,4 +1,4 @@
-# Local badhosts file.
+# Local badhosts file
 # This file can be downloaded and used to append with hosts file
 
 0.0.0.0 tamilmother.com

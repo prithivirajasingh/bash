@@ -3,7 +3,7 @@
 
 # echo "" > ~/ip6.txt
 # lk_ip6=`cat ~/ip6.txt 2> /dev/null`
-lk_ip6=`nslookup printer6000.crabdance.com | grep answer -A10 | grep Address | awk '{print $2}'`
+lk_ip6=`nslookup printer6000.crabdance.com 8.8.8.8 | grep answer -A10 | grep Address | awk '{print $2}'`
 echo "Last known ip6 address of printer6000.crabdance.com:"
 echo $lk_ip6
 # echo ""
@@ -30,7 +30,7 @@ echo ""
 
 # echo "" > ~/ip6.txt
 # lk_ip6=`cat ~/ip6.txt 2> /dev/null`
-lk_ip6=`nslookup prithivi6.crabdance.com | grep answer -A10 | grep Address | awk '{print $2}'`
+lk_ip6=`nslookup prithivi6.crabdance.com 8.8.8.8 | grep answer -A10 | grep Address | awk '{print $2}'`
 echo "Last known ip6 address of prithivi6.crabdance.com:"
 echo $lk_ip6
 # echo ""

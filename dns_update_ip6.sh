@@ -9,11 +9,11 @@ echo $lk_ip6
 # echo ""
 # lk_ip6='nslookup printer6000.crabdance.com | grep answer -A10 | grep Address | awk '{print $2}''
 # echo "ifconfig inet6 output:"
-# ifconfig | grep inet6
-# ifconfig | grep inet6 | grep global -m1 | awk '{print $2}' > ~/ip6.txt
+# /usr/sbin/ifconfig | grep inet6
+# /usr/sbin/ifconfig | grep inet6 | grep global -m1 | awk '{print $2}' > ~/ip6.txt
 # echo "" > ~/ip6.txt
 # current_ip6=`cat ~/ip6.txt`
-current_ip6=`ifconfig | grep inet6 | grep global -m1 | awk '{print $2}'`
+current_ip6=`/usr/sbin/ifconfig | grep inet6 | grep global -m1 | awk '{print $2}'`
 echo "Current ip6 address:"
 echo $current_ip6
 # echo ""
@@ -36,11 +36,11 @@ echo $lk_ip6
 # echo ""
 # lk_ip6='nslookup printer6000.crabdance.com | grep answer -A10 | grep Address | awk '{print $2}''
 # echo "ifconfig inet6 output:"
-# ifconfig | grep inet6
-# ifconfig | grep inet6 | grep global -m1 | awk '{print $2}' > ~/ip6.txt
+# /usr/sbin/ifconfig | grep inet6
+# /usr/sbin/ifconfig | grep inet6 | grep global -m1 | awk '{print $2}' > ~/ip6.txt
 # echo "" > ~/ip6.txt
 # current_ip6=`cat ~/ip6.txt`
-current_ip6=`ifconfig | grep inet6 | grep global -m1 | awk '{print $2}'`
+current_ip6=`/usr/sbin/ifconfig | grep inet6 | grep global -m1 | awk '{print $2}'`
 echo "Current ip6 address:"
 echo $current_ip6
 # echo ""

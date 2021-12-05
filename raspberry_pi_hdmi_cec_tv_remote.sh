@@ -110,7 +110,7 @@ do
                     ;;
                 "8")
                     if [ -f "$FILE" ]; then
-                        xdotool mousemove 640 540
+                        xdotool mousemove 640 640
                     else
                         keychar "8" intkeychar
                     fi

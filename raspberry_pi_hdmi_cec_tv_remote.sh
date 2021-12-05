@@ -265,9 +265,9 @@ do
                     ;;
                 ".")
                     if [ -f "$FILE" ]; then
-                        firefox "https://www.tamilhdbox.com/" & disown
-                    else
                         firefox "https://www.1tamilmv.bar/" & disown
+                    else
+                        firefox "https://www.tamilhdbox.com/" & disown
                     fi
                     #firefox "https://www.1tamilmv.bar/" & disown
                     #echo sub picture key pressed --- debug

@@ -10,7 +10,7 @@ pwd >> /jffs/badhosts.log
 sleep 60
 echo "sleep 60 completed" >> /jffs/badhosts.log                                                                               
 date >> /jffs/badhosts.log                                      
-curl -s https://raw.githubusercontent.com/prithivirajasingh/bash/main/known_macs.txt > known_macs 2>> /jffs/badhosts.log   
+curl -s https://raw.githubusercontent.com/prithivirajasingh/bash/main/known_macs.txt > known_macs.txt 2>> /jffs/badhosts.log   
 echo "known_macs completed" >> /jffs/badhosts.log                                                                          
 curl -s https://winhelp2002.mvps.org/hosts.txt > temphosts.txt  2>> /jffs/badhosts.log                                     
 echo "curl1 completed, winhelp2002" >> /jffs/badhosts.log                             

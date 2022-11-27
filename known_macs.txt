@@ -1,1 +1,5 @@
-5c:87:9c:72:02:4a   Predator
+5c:87:9c:72:02:4a   predator_wifi
+e4:5f:01:72:37:fa   pi_wifi
+e4:5f:01:72:37:f9   pi_lan
+86:97:c1:e9:f5:d5   realme-3-pro
+

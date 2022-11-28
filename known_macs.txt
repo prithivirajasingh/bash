@@ -5,4 +5,5 @@ e4:5f:01:72:37:f9   pi_lan
 70:5e:55:60:4e:81   realme3Pro
 dc:bd:7a:63:a5:34   HisenseTV
 ac:d6:18:0f:2b:b6   Nitzzzz
+ac:5f:ea:ef:c8:a0   OnePlus-8
 

@@ -6,4 +6,5 @@ e4:5f:01:72:37:f9   pi_lan
 dc:bd:7a:63:a5:34   HisenseTV
 ac:d6:18:0f:2b:b6   Nitzzzz
 ac:5f:ea:ef:c8:a0   OnePlus-8
+14:7d:da:8a:46:6e   C02DFB7NMD6M
 

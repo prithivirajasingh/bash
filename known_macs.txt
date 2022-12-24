@@ -7,4 +7,8 @@ dc:bd:7a:63:a5:34   HisenseTV
 ac:d6:18:0f:2b:b6   Nitzzzz
 ac:5f:ea:ef:c8:a0   OnePlus-8
 14:7d:da:8a:46:6e   C02DFB7NMD6M
+04:ea:56:fc:df:a0   Nithyanandan_Laptop
+32:f3:bb:bb:0a:7c   Nithyanandan_iPhone
+0a:6d:ad:97:d2:29   Dhivi_iPhone
+98:01:a7:a5:d6:c1   Dhivi_Laptop
 

@@ -1,17 +1,17 @@
-5c:87:9c:72:02:4a   predator_wifi           192.168.1.143
-08:97:98:72:70:93   predator_lan            192.168.1.144
-e4:5f:01:72:37:fa   pi_wifi                 192.168.1.136
-e4:5f:01:72:37:f9   pi_lan                  192.168.1.135
-70:5e:55:60:4e:81   realme3Pro              192.168.1.199
-dc:bd:7a:63:a5:34   HisenseTV               192.168.1.125
-ac:d6:18:0f:2b:b6   Nitzzzz                 192.168.1.122
-ac:5f:ea:ef:c8:a0   OnePlus-8               192.168.1.140
-14:7d:da:8a:46:6e   C02DFB7NMD6M            192.168.1.103
-04:ea:56:fc:df: a0   Nithyanandan_Laptop     192.168.1.123
-32:f3:bb:bb:0a: 7c   Nithyanandan_iPhone     192.168.1.101
-0a:6d:ad:97:d2: 29   Dhivi_iPhone            192.168.1.118
-98:01:a7:a5:d6: c1   Dhivi_Laptop            192.168.1.114
-2a:b2:c7:c0:f8: 91   Sureshkannan_iPhone     192.168.3.150
-86:a5:16:55:27: 54   Venkat_Phone            192.168.3.123
+e4:5f:01:72:37:f9   pi_lan                  192.168.1.11
+e4:5f:01:72:37:fa   pi_wifi                 192.168.1.12
+08:97:98:72:70:93   predator_lan            192.168.1.13
+5c:87:9c:72:02:4a   predator_wifi           192.168.1.14
+14:7d:da:8a:46:6e   C02DFB7NMD6M            192.168.1.15
+dc:bd:7a:63:a5:34   HisenseTV               192.168.1.16
+70:5e:55:60:4e:81   realme3Pro              192.168.1.17
+ac:d6:18:0f:2b:b6   Nitzzzz                 192.168.1.18
+ac:5f:ea:ef:c8:a0   OnePlus-8               192.168.1.19
+04:ea:56:fc:df: a0   Nithyanandan_Laptop     192.168.1.31
+32:f3:bb:bb:0a: 7c   Nithyanandan_iPhone     192.168.1.32
+0a:6d:ad:97:d2: 29   Dhivi_iPhone            192.168.1.33
+98:01:a7:a5:d6: c1   Dhivi_Laptop            192.168.1.34
+86:a5:16:55:27: 54   Venkat_Phone            192.168.3.11
+2a:b2:c7:c0:f8: 91   Sureshkannan_iPhone     192.168.3.12
 
 

@@ -11,6 +11,17 @@ ac:5f:ea:ef:c8:a0   OnePlus-8               192.168.1.19
 32:f3:bb:bb:0a: 7c   Nithyanandan_iPhone     192.168.1.32
 0a:6d:ad:97:d2: 29   Dhivi_iPhone            192.168.1.33
 98:01:a7:a5:d6: c1   Dhivi_Laptop            192.168.1.34
+
+
+fc:67:1f:04:55:c7   wlan0                   Smart_plug
+fc:67:1f:04:63:72   wlan0                   Smart_plug
+ac:67:84:0d:2a:04   google_nest_mini        google_nest_mini
+20:1f:3b:9e:8c:e6   google_nest_mini        google_nest_mini
+d8:a0:11:cf:6d:df   wiz_cf6ddf              Smart_LED
+d8:a0:11:cf:69:83   wiz_cf6983              Smart_LED
+d8:a0:11:cf:d1:6b   wiz_cfd16b              Smart_LED
+
+
 86:a5:16:55:27: 54   Venkat_Phone            192.168.3.11
 2a:b2:c7:c0:f8: 91   Sureshkannan_iPhone     192.168.3.12
 

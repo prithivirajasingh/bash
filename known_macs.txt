@@ -29,6 +29,9 @@ d8:a0:11:cf:d1:6b   wiz_cfd16b              Smart_LED
 86:a5:16:55:27:#54   Venkat_Phone            192.168.3.11
 2a:b2:c7:c0:f8:#91   Sureshkannan_iPhone     192.168.3.12
 5a:10:7d:93:86:#b4  Kannaka                 192.168.3.110
+b2:ee:e6:7f:75:96    Mama_Chithode          192.168.1.118
+b2:b6:95:0b:66:52    Atha_Chithode          192.168.1.112
+
 
 
 

@@ -3,10 +3,10 @@
 if mkdir /tmp/wanuplock 2> /dev/null  
 then
 sleep 60
-curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /' >> /jffs/custom.wanup.log
+curl -s http://worldtimeapi.org/api/timezone/America/Los_Angeles | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /' >> /jffs/custom.wanup.log
 /jffs/custom.sh &
 sleep 300              
 rmdir /tmp/wanuplock/
 else                                          
-echo "Wanup $(curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /')" >> /jffs/secondinstance.log
+echo "Wanup $(curl -s http://worldtimeapi.org/api/timezone/America/Los_Angeles | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /')" >> /jffs/secondinstance.log
 fi

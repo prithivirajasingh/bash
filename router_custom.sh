@@ -56,6 +56,6 @@ echo "Task completed successfully" >> /jffs/badhosts.log
 curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /' >> /jffs/badhosts.log                                                                                    
 else                                                                                                          
 echo "Inside duplicate instance. Check time below." >> /jffs/badhosts.log                                     
-$today >> /jffs/badhosts.log                                                                                    
+echo $today >> /jffs/badhosts.log                                                                                    
 echo "Custom $(echo $today)" >> /jffs/secondinstance.log                                                               
 fi

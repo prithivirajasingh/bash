@@ -46,8 +46,8 @@ curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]
 cat /jffs/badhostslocal >> /jffs/badhosts                                                                                                                                  
 echo "badhostslocal appended" >> /jffs/badhosts.log
 today=$(curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /')
-$today >> /jffs/badhosts.log                                                                                                                                                 
-$today >> /jffs/custom.sh.log                                                                                                                                                
+echo $today >> /jffs/badhosts.log                                                                                                                                                 
+echo $today >> /jffs/custom.sh.log                                                                                                                                                
 stopservice dnsmasq && startservice dnsmasq && echo "dnsmasq service restart successful" >> /jffs/badhosts.log                                                             
 curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /' >> /jffs/badhosts.log                                                                                    
 rmdir /tmp/customlock/ && echo "customlock directory removed" >> /jffs/badhosts.log                           

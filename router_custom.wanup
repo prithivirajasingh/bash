@@ -2,7 +2,7 @@
 # location: /jffs/etc/config/custom.wanup  
 if mkdir /tmp/wanuplock 2> /dev/null  
 then
-sleep 30
+sleep 60
 date >> /jffs/custom.startup.log
 /jffs/custom.sh &
 sleep 300              

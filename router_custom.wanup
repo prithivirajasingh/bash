@@ -8,5 +8,5 @@ curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]
 sleep 300              
 rmdir /tmp/wanuplock/
 else                                          
-echo "Wanup $(date)" >> /jffs/secondinstance.log
+echo "Wanup $(curl -s http://worldtimeapi.org/api/timezone/Etc/UTC | grep -o '"datetime":"[^"]*' | sed -E 's/"datetime":"([0-9-]{10}T[0-9:]{8}).*/\1/; s/T/ /')" >> /jffs/secondinstance.log
 fi

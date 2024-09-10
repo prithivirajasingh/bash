@@ -1,0 +1,12 @@
+#!/bin/sh
+# location: /jffs/etc/config/custom.wanup  
+if mkdir /tmp/wanuplock 2> /dev/null  
+then
+sleep 30
+date >> /jffs/custom.startup.log
+/jffs/custom.sh &
+sleep 300              
+rmdir /tmp/wanuplock/
+else                                          
+echo "Wanup $(date)" >> /jffs/secondinstance
+fi

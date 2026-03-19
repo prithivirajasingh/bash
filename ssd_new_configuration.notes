@@ -27,13 +27,13 @@ sudo parted -a optimal /dev/nvme0n1 mkpart primary btrfs 301GB 100%
 sudo mkfs.fat -F32 /dev/nvme0n1p1
 
 # Windows (Windows installer can also do this)
-sudo mkfs.ntfs -f /dev/nvme0n1p2
+sudo mkfs.ntfs -f -L windows /dev/nvme0n1p2
 
 # Shared exFAT
-sudo mkfs.exfat -n SharedData /dev/nvme0n1p3
+sudo mkfs.exfat -n windowsShared /dev/nvme0n1p3
 
 # Linux Btrfs
-sudo mkfs.btrfs -L LinuxPool /dev/nvme0n1p4
+sudo mkfs.btrfs -L linux /dev/nvme0n1p4
 
 
 
@@ -45,7 +45,7 @@ sudo btrfs subvolume create /mnt/ubuntuRoot
 sudo btrfs subvolume create /mnt/ubuntuHome
 sudo btrfs subvolume create /mnt/kaliRoot
 sudo btrfs subvolume create /mnt/kaliHome
-sudo btrfs subvolume create /mnt/Data
+sudo btrfs subvolume create /mnt/data
 sudo btrfs subvolume create /mnt/snapshots
 
 # enable quota system
@@ -198,4 +198,16 @@ compress=zstd:3 in mount options
 
 
 
+# FSTAB
+
+sudo blkid
+
+sudo nano /etc/fstab
+
+# Shared Data (Windows <-> Linux)
+UUID=<exfat-uuid>  /mnt/Shared  exfat defaults                    0 0
+
+# Optional
+UUID=<btrfs-uuid>  /data        btrfs subvol=data,noatime,compress=zstd:3        0 2
+UUID=<btrfs-uuid>  /snapshots   btrfs subvol=snapshots,noatime,compress=zstd:3   0 2
 

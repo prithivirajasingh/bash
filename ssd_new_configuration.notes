@@ -1,0 +1,201 @@
+# wipe everything
+sudo sgdisk --zap-all /dev/nvme0n1
+
+
+# CREATE GPT AND PARTITIONS
+
+sudo parted /dev/nvme0n1 mklabel gpt
+
+# 1. EFI (1GB)
+sudo parted -a optimal /dev/nvme0n1 mkpart ESP fat32 1MiB 1025MiB
+sudo parted /dev/nvme0n1 set 1 esp on
+
+# 2. Windows (200GB)
+sudo parted -a optimal /dev/nvme0n1 mkpart primary ntfs 1025MiB 201GB
+
+# 3. Shared exFAT (100GB)
+sudo parted -a optimal /dev/nvme0n1 mkpart primary exfat 201GB 301GB
+
+# 4. Linux Btrfs (rest of disk)
+sudo parted -a optimal /dev/nvme0n1 mkpart primary btrfs 301GB 100%
+
+
+
+# FORMAT THE PARTITIONS
+
+# EFI
+sudo mkfs.fat -F32 /dev/nvme0n1p1
+
+# Windows (Windows installer can also do this)
+sudo mkfs.ntfs -f /dev/nvme0n1p2
+
+# Shared exFAT
+sudo mkfs.exfat -n SharedData /dev/nvme0n1p3
+
+# Linux Btrfs
+sudo mkfs.btrfs -L LinuxPool /dev/nvme0n1p4
+
+
+
+# CREATE BTRFS SUB-VOLUMES
+
+sudo mount /dev/nvme0n1p4 /mnt
+
+sudo btrfs subvolume create /mnt/ubuntuRoot
+sudo btrfs subvolume create /mnt/ubuntuHome
+sudo btrfs subvolume create /mnt/kaliRoot
+sudo btrfs subvolume create /mnt/kaliHome
+sudo btrfs subvolume create /mnt/Data
+sudo btrfs subvolume create /mnt/snapshots
+
+# enable quota system
+sudo btrfs quota enable /mnt
+
+# limit snapshots to 300GB
+sudo btrfs qgroup limit 300G /mnt/snapshots
+
+sudo umount /mnt
+
+
+
+# START UBUNTU INSTALLATION FROM LIVE USB
+
+1️⃣ Boot Ubuntu installer (Try Ubuntu)
+
+When you reach “Installation type”, choose:
+
+Something else
+
+This gives you full control.
+
+2️⃣ Set up mount points (critical part)
+
+You will see your partitions. Select Btrfs partition (/dev/nvme0n1p4).
+
+🔹 Root (/)
+
+Select partition: /dev/nvme0n1p4
+
+Use as: btrfs journaling filesystem
+
+Mount point: /
+
+Click Change → Advanced options
+
+Mount options:
+
+subvol=ubuntuRoot,compress=zstd:3,noatime
+
+✔ Format: NO (you already formatted)
+
+🔹 Home (/home)
+
+Same partition (/dev/nvme0n1p4)
+
+Mount point: /home
+
+Advanced mount options:
+
+subvol=ubuntuHome,compress=zstd:3,noatime
+🔹 EFI
+
+/dev/nvme0n1p1
+
+Use as: EFI System Partition
+
+Mount point: /boot/efi
+
+✔ Do NOT format (Windows already uses it)
+
+3️⃣ Bootloader location
+
+Select the disk, not a partition:
+
+/dev/nvme0n1
+
+Proceed with installation.
+
+✅ Ubuntu will now:
+
+Create /etc/fstab with compression enabled
+
+Install GRUB correctly
+
+Use compression from the very first write
+
+4️⃣ Verify after install (important sanity check)
+
+After reboot:
+
+mount | grep btrfs
+
+You should see:
+
+compress=zstd:3
+
+If yes → you’re done correctly.
+
+🟣 PART B — Installing Kali with Btrfs + compression
+
+Boot Kali installer → choose:
+
+Graphical Install
+Manual partitioning
+
+1️⃣ Assign mount points
+
+Same idea, different subvolumes.
+
+🔹 Root (/)
+
+Partition: /dev/nvme0n1p4
+
+Use as: btrfs
+
+Mount point: /
+
+Mount options:
+
+subvol=kaliRoot,compress=zstd:3,noatime
+🔹 Home (/home)
+
+Same partition
+
+Mount options:
+
+subvol=kaliHome,compress=zstd:3,noatime
+🔹 EFI
+
+/dev/nvme0n1p1
+
+Mount: /boot/efi
+
+Do not format
+
+2️⃣ Bootloader
+
+Install GRUB to:
+
+/dev/nvme0n1
+
+Kali will add itself to EFI and chainload Ubuntu + Windows.
+
+🧪 Final verification (both OSes)
+
+Run in both Ubuntu and Kali:
+
+btrfs filesystem df /
+
+and
+
+mount | grep btrfs
+
+You should see:
+
+Data, Metadata usage (compressed)
+
+compress=zstd:3 in mount options
+
+
+
+

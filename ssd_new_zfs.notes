@@ -33,6 +33,7 @@ sudo zfs create -o mountpoint=none rpool/ROOT
 # OS roots
 sudo zfs create -o canmount=noauto -o mountpoint=/ rpool/ROOT/ubuntu
 sudo zfs create -o canmount=noauto -o mountpoint=/ rpool/ROOT/kali
+sudo zpool set bootfs=rpool/ROOT/ubuntu rpool
 
 # Data & VMs
 sudo zfs create -o mountpoint=/data rpool/data

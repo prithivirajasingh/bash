@@ -29,6 +29,7 @@ ashift=12 aligns for 4K NVMe sectors
 mountpoint=none prevents auto-mounting the root pool
 
 4️⃣ Create datasets
+sudo zfs create -o mountpoint=none rpool/ROOT
 # OS roots
 sudo zfs create -o canmount=noauto -o mountpoint=/ rpool/ROOT/ubuntu
 sudo zfs create -o canmount=noauto -o mountpoint=/ rpool/ROOT/kali

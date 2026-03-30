@@ -136,3 +136,39 @@ ZFS datasets with compression and automatic snapshots
 
 Ubuntu + Kali roots ready to install
 
+
+
+
+
+
+
+
+
+
+ZFS partitioning commands:
+
+sudo apt install nvme-cli
+sudo apt install zfsutils-linux
+sudo lsblk
+sudo sgdisk --zap-all /dev/nvme0n1
+sudo wipefs -a /dev/nvme0n1
+sudo sgdisk -n1:1M:+1G -t1:EF00 /dev/nvme0n1
+sudo sgdisk -n2:0:+200G -t2:0700 /dev/nvme0n1
+sudo sgdisk -n3:0:+100G -t3:0700 /dev/nvme0n1
+sudo sgdisk -n4:0:0 -t4:BF00 /dev/nvme0n1
+sudo zpool create -f -o ashift=12 \
+  -O compression=zstd \
+  -O atime=off \
+  -O mountpoint=none \
+  rpool /dev/nvme0n1p4
+sudo zfs create -o mountpoint=none rpool/ROOT
+sudo zfs create -o canmount=noauto -o mountpoint=/ rpool/ROOT/ubuntu
+sudo zfs create -o canmount=noauto -o mountpoint=/ rpool/ROOT/kali
+sudo zfs create \
+  -V 50G \
+  -o volblocksize=4K \
+  -o compression=off \
+  -o sync=disabled \
+  -o primarycache=metadata \
+  -o secondarycache=none \
+  rpool/swap

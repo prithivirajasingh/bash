@@ -1,5 +1,9 @@
 Perfect! Here’s a complete, “golden” NVMe ZFS setup for your laptop, incorporating everything we’ve discussed: Ubuntu, Kali, datasets, swap, compression, mountpoints, and snapshot strategy. You can follow this step by step on a fresh drive.
 
+INSTALL REQUIRED PACKAGES:
+sudo apt install nvme-cli
+sudo apt install zfsutils-linux
+
 1️⃣ Wipe the NVMe SSD
 sudo sgdisk --zap-all /dev/nvme0n1
 sudo wipefs -a /dev/nvme0n1

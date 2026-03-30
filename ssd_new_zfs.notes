@@ -41,12 +41,11 @@ sudo zfs create -o mountpoint=/vm rpool/vm
 # Swap zvol for hibernation
 sudo zfs create \
   -V 50G \
-  -b 4K \
   -o volblocksize=4K \
   -o compression=off \
-  -o logbias=throughput \
-  -o sync=always \
+  -o sync=disabled \
   -o primarycache=metadata \
+  -o secondarycache=none \
   rpool/swap
 
 sudo mkswap /dev/zvol/rpool/swap

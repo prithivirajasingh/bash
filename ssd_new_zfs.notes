@@ -13,6 +13,7 @@ sudo wipefs -a /dev/nvme0n1
 2️⃣ Create partitions
 # EFI
 sudo sgdisk -n1:1M:+1G -t1:EF00 /dev/nvme0n1
+sudo mkfs.fat -F32 /dev/nvme0n1p1
 
 # Windows NTFS
 sudo sgdisk -n2:0:+200G -t2:0700 /dev/nvme0n1
@@ -155,6 +156,7 @@ sudo lsblk
 sudo sgdisk --zap-all /dev/nvme0n1
 sudo wipefs -a /dev/nvme0n1
 sudo sgdisk -n1:1M:+1G -t1:EF00 /dev/nvme0n1
+sudo mkfs.fat -F32 /dev/nvme0n1p1
 sudo sgdisk -n2:0:+200G -t2:0700 /dev/nvme0n1
 sudo mkfs.ntfs -f -L windows /dev/nvme0n1p2
 sudo sgdisk -n3:0:+100G -t3:0700 /dev/nvme0n1
